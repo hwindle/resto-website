@@ -5,7 +5,9 @@
   --col-aqua-400: #2A9D8F;
   --col-orange-400: #E76F51;
   --col-neutral-grey-800: rgb(50, 50, 50);
-  --col-neutral-grey-200: #CCCCCC;
+  --col-neutral-grey-600: rgba(50, 50, 50, 0.7);
+  --col-neutral-grey-200: #EFEFEF;
+  --img-width: 375px;
 }
 
 * {
@@ -38,6 +40,9 @@ img {
 
 .section-title span {
   display: block;
+  font-family: var(--body-font);
+  font-size: 1.2rem;
+  font-weight: bold;
   color: var(--col-orange-400);
   margin-top: 0.5rem;
 }
@@ -68,8 +73,6 @@ header nav ul li {
   float: right;
   font-size: 1.6rem;
 }
-
-
 /** end of HEADER **/
 
 /** HERO **/
@@ -109,18 +112,76 @@ header nav ul li {
 
 img.hero-icons {
   display: block;
-  max-width: 400px;
+  max-width: var(--img-width);
   margin: 3rem auto;
 }
-
-
 /** end of HERO **/
 
-/** HEADER **/
-/** end of HEADER **/
+/** SPECIALS **/
+.specialty-info .category {
+  display: block;
+  position: relative;
+  font-family: var(--body-font);
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--col-orange-400);
+  margin: 1rem 0;
+  padding-bottom: 0.5rem;
+}
 
-/** HEADER **/
-/** end of HEADER **/
+.specialty-info .category::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0.5rem;
+  border-bottom: 1px solid black;
+}
+
+.specialty-info .description {
+  font-size: 1.1rem;
+  font-weight: lighter;
+  padding-bottom: 1rem;
+}
+
+span.specialty-title {
+  font-size: 2.6rem;
+  font-weight: bold;
+  display: block;
+  position: relative;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+span.specialty-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 6rem;
+  height: 0.5rem;
+  border-bottom: 1px solid black;
+}
+
+section.price {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+img.specialty-pic {
+  box-shadow: 5px 5px 15px var(--col-neutral-grey-600);
+}
+
+#second-specials-img {
+  order: -1;
+}
+/** end of SPECIALS **/
+
+/** MENU **/
+/** end of MENU **/
 
 /*** TABLET and Desktop media Queries ***/
 @media screen and (min-width: 725px) {
@@ -164,10 +225,36 @@ img.hero-icons {
   }
 
   .hero-img {
-    width: 400px;
+    width: var(--img-width);
   }
 
   .hero-buttons {
     justify-content: flex-start;
+  }
+
+  /* Specials */
+  .specials-area {
+    padding: 2rem;
+    background-color: var(--col-neutral-grey-200);
+  }
+
+  article.specialty-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  img.specialty-pic {
+    width: var(--img-width);
+  }
+
+  .price {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .price span {
+    margin-bottom: 1rem;
   }
 }
