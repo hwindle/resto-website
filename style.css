@@ -2,7 +2,9 @@
   /* Variables for colours, fonts */
   --body-font: 'Josefin Sans', 'Liberation sans', Tahoma, sans-serif;
   --heading-font: Rancho, cursive;
-  --col-blue-400: rgb(0, 12, 198);
+  --col-aqua-400: #2A9D8F;
+  --col-orange-400: #E76F51;
+  --col-neutral-grey-800: rgb(50, 50, 50);
 }
 
 * {
@@ -42,7 +44,53 @@ header nav ul li {
   float: right;
   font-size: 1.6rem;
 }
+
+
 /** end of HEADER **/
+
+/** HERO **/
+.hero-info h1 {
+  font-weight: lighter;
+  font-size: 3.5rem;
+  color: var(--col-neutral-grey-800);
+  margin: 3rem 0;
+}
+
+.coloured-word {
+  color: var(--col-aqua-400);
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.hero-buttons button {
+  padding: 0.8rem 2rem;
+  border-radius: 5px;
+  border: none;
+}
+
+.hero-buttons :first-child {
+  background-color: var(--col-orange-400);
+  box-shadow: 5px 5px 15px var(--col-orange-400);
+  margin-right: 15%;
+  color: white;
+}
+
+.hero-buttons :last-child {
+  background-color: white;
+  font-size: 1rem;
+}
+
+img.hero-icons {
+  display: block;
+  max-width: 400px;
+  margin: 3rem auto;
+}
+
+
+/** end of HERO **/
 
 /** HEADER **/
 /** end of HEADER **/
@@ -50,9 +98,7 @@ header nav ul li {
 /** HEADER **/
 /** end of HEADER **/
 
-/** HEADER **/
-/** end of HEADER **/
-
+/*** TABLET and Desktop media Queries ***/
 @media screen and (min-width: 725px) {
   body {
     max-width: 960px;
@@ -77,5 +123,27 @@ header nav ul li {
 
   #burger-menu {
     display: none;
+  }
+
+  /* hero */
+  .hero {
+    display: flex;
+    padding: 1rem;
+  }
+  
+  .hero-info {
+    padding: 1rem;
+  }
+
+  .hero-info-block {
+    display: block;
+  }
+
+  .hero-img {
+    width: 400px;
+  }
+
+  .hero-buttons {
+    justify-content: flex-start;
   }
 }
